@@ -36,6 +36,7 @@ function App() {
                 <div className="description">Tv i had to buy</div>
               </div>
               <div className="right">
+                <button className="close-btn">✕</button>
                 <div className='price'>$500</div>
                 <div className="datetime">05/10/1998</div>
               </div>
@@ -46,6 +47,7 @@ function App() {
                 <div className="description">Tv i had to buy</div>
               </div>
               <div className="right">
+                <button className="close-btn">✕</button>
                 <div className='price'>$500</div>
                 <div className="datetime">05/10/1998</div>
               </div>
