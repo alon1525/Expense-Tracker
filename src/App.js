@@ -4,24 +4,31 @@ import "./App.css";
 function App() {
   const [transactions, setTransactions] = useState([]);
   const [name, setName] = useState("");
-  const [date, setDate] = useState("");
+  const [datetime, setDate] = useState("");
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
 
-  const TransactionList = ({ transactions }) => {
-    const getPriceClass = (price) => {
-      if (price > 0) return "price positive";
-      if (price < 0) return "price negative";
-      return "price zero";
-    };
-  };
+  function addNewTransaction(event) {
+    const url = process.env.REACT_APP_CURRENT_DIRECTORY + "/transactions";
+    event.preventDefault();
+    console.log(url);
+    fetch(url, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ name, description, datetime }),
+    }).then((response) => {
+      response.json().then((json) => {
+        console.log("result", json);
+      });
+    });
+  }
 
   return (
     <main>
       <h1>
         400<span>.00</span>
       </h1>
-      <form>
+      <form onSubmit={addNewTransaction}>
         <div className="basic">
           <input
             type="text"
@@ -32,8 +39,8 @@ function App() {
           ></input>
           <input
             type="datetime-local"
-            value={date}
-            onChange={(ev) => setDate(ev.target.date)}
+            value={datetime}
+            onChange={(ev) => setDate(ev.target.datetime)}
             className="date"
           ></input>
         </div>
