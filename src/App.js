@@ -40,6 +40,16 @@ function App() {
                 <div className="datetime">05/10/1998</div>
               </div>
             </div>
+            <div className="transaction">
+              <div className="left">
+                <div className="name">New Samsung TV</div>
+                <div className="description">Tv i had to buy</div>
+              </div>
+              <div className="right">
+                <div className='price'>$500</div>
+                <div className="datetime">05/10/1998</div>
+              </div>
+            </div>
         </div>
       </main>
     );

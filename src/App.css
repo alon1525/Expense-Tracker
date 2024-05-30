@@ -1,38 +1,111 @@
-* {
-  box-sizing: border-box;
+/* Body styles */
+body {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212; 
+  color: #fff;
 }
-main
-{
-
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #121212;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+/* Main container styles */
+main {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #1f1f1f; 
+  border-radius: 10px;
 }
 
+/* Heading styles */
 h1 {
-  margin-bottom: 20px;
+  font-size: 48px;
+  margin-bottom: 30px;
   text-align: center;
-  color: #bb86fc;
 }
-/*all inputs*/
-form input {
+
+h1 span {
+  font-size: 24px;
+}
+
+/* Form styles */
+form {
+  margin-bottom: 20px;
+}
+
+/* Input and button styles */
+.basic,
+.description {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
   width: 100%;
-  background-color: transparent;
-  color: #ddd;
-  border: 2px solid #30313d;
+  box-sizing: border-box;
 }
-/*the two top inputs*/
-form div.basic {
+
+input[type="text"],
+input[type="datetime-local"] {
+  background-color: #2b2b2b; 
+  color: #fff; 
+}
+
+button {
+  background-color: #4caf50; 
+  color: #fff; 
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #43a047; /* Button background color on hover */
+}
+
+/* Transactions container styles */
+.transactions {
   display: flex;
-  gap: 5px; 
-  padding-bottom: 10px;
+  flex-direction: column;
+}
+
+/* Transaction item styles */
+.transaction {
+  display: flex;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #333; 
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  flex: 1;
+  text-align: right;
+}
+
+/* Price styles */
+.price {
+  font-weight: bold;
+}
+
+.positive {
+  color: #4caf50; /* Color for positive prices */
+}
+
+.negative {
+  color: #f44336; /* Color for negative prices */
+}
+
+.datetime {
+  color: #888; /* Color for datetime text */
+}
+
+/* Name and description styles */
+.name,
+.description {
+  margin-bottom: 5px;
 }
