@@ -12,8 +12,9 @@ app.get('/api/test', (req, res) => {
     res.json('test ok');
 });
 
-app.post('/api/transaction',(res,req) => {
-    res.send(req.bodypa);
+app.post('/api/transactions', (req, res) => {
+    const transaction = req.body;
+    res.json(transaction); // Simulate saving to the database and returning the saved transaction
 });
 
 app.listen(port, (req, res) => {

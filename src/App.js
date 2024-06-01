@@ -6,22 +6,25 @@ function App() {
   const [name, setName] = useState("");
   const [datetime, setDate] = useState("");
   const [description, setDescription] = useState("");
-  const [amount, setAmount] = useState("");
 
-  function addNewTransaction(event) {
+
+  const addNewTransaction = async (event) => {
+    const newTransaction = { name, description, datetime};
     const url = process.env.REACT_APP_CURRENT_DIRECTORY + "/transactions";
     event.preventDefault();
     console.log(url);
-    fetch(url, {
+    const response = await fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ name, description, datetime }),
-    }).then((response) => {
-      response.json().then((json) => {
-        console.log("result", json);
-      });
+      body: JSON.stringify(newTransaction),
     });
-  }
+    const result = await response.json();
+    setTransactions([...transactions, result]);
+    console.log(result);
+    setName("")
+    setDate("")
+    setDescription("")//reseting the transaction form
+  };
 
   return (
     <main>
@@ -38,7 +41,7 @@ function App() {
             placeholder="Transactions name"
           ></input>
           <input
-            type="datetime-local"
+            type="date"
             value={datetime}
             onChange={(ev) => setDate(ev.target.datetime)}
             className="date"

@@ -11,8 +11,9 @@
     "express": "^4.19.2",
     "gsap": "^3.12.5",
     "react": "^18.3.1",
+    "react-datepicker": "^6.9.0",
     "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
@@ -43,6 +44,7 @@
   "author": "Alon Krumer <alon1525@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  }
+    "@babel/plugin-transform-private-property-in-object": "^7.24.6"
+  },
+  "repository": "https://github.com/alon1525/Expense-Tracker"
 }

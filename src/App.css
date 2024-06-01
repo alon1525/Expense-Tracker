@@ -38,7 +38,7 @@ form {
 }
 
 input[type="text"],
-input[type="datetime-local"],
+input[type="date"],
 button {
   padding: 10px;
   border: none;
@@ -48,7 +48,7 @@ button {
 }
 
 input[type="text"],
-input[type="datetime-local"] {
+input[type="date"] {
   background-color: #2b2b2b; 
   color: #fff; 
 }
