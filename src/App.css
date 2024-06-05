@@ -32,13 +32,24 @@ form {
 }
 
 /* Input and button styles */
-.basic,
-.description {
+input{
   margin-bottom: 15px;
 }
 
-input[type="text"],
-input[type="date"],
+.basic {
+  display: flex;
+  gap: 10px; /* Space between the inputs */
+  margin-bottom: 10px;
+}
+
+.basic .name,
+.basic .date {
+  flex: 1; /* Make the inputs share the space equally */
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+input,
 button {
   padding: 10px;
   border: none;
@@ -48,9 +59,11 @@ button {
 }
 
 input[type="text"],
-input[type="date"] {
+input[type="date"],
+input {
   background-color: #2b2b2b; 
   color: #fff; 
+  
 }
 
 button {

@@ -1,8 +1,11 @@
 import express from 'express';
 import bodyParser from "body-parser";
 import cors from "cors";
-import Transaction from "models/Transaction.js";
+import Transaction from "./models/Transaction.js";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const port = 4000;
@@ -15,10 +18,11 @@ app.get('/api/test', (req, res) => {
     res.json('test ok');
 });
 
-app.post('/api/transaction', (req, res) => {
-    mongoose.connect('transaction')
-    const {name,description,datetime} = req.body;
-    res.json(req.body); // Simulate saving to the database and returning the saved transaction
+app.post('/api/transaction', async (req, res) => {
+    await mongoose.connect(process.env.MONGO_URL)
+    const {name,datetime,price} = req.body;
+    const transaction = await Transaction.create({name, datetime, price});
+    res.json(transaction); // Simulate saving to the database and returning the saved transaction
 });
 
 app.listen(port, (req, res) => {
