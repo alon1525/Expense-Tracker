@@ -31,6 +31,12 @@ app.get('/api/transactions', async (req,res) => {
     res.json(transaction);
 });
 
+app.delete('/api/transactions', async (req,res) => {
+    await mongoose.connect(process.env.MONGO_URL);
+    const transaction = await Transaction.findOneAndDelete(req.body.id);
+    res.json(transaction);
+});
+
 app.listen(port, (req, res) => {
     console.log('listening on port 4000');
 });
