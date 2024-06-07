@@ -12,4 +12,4 @@ This application is built using HTML, CSS, Node.js, JavaScript, MongoDB, React.j
 - - **Backend:** - Node.js - Express
 - - **Database:** - MongoDB
 
-![Picture of how it looks like](Project Pic)
+![Alt Text](PIC.png)
